@@ -1,18 +1,36 @@
-body {
-    background-color: orange;
+html, body, header, div{
+    background-color: orange !important;
     
 }
-header{
+h2{
+    text-align: center;
+}
+img{
+    height: 200px;
+    width: 200px;
+}
+li {
+    padding: 5px;
+    margin: 5px;
+    /* background: rgb(189, 157, 241);  */
+    overflow-wrap: break-word;
+  }
+  .btn{
+    height:24px !important;
+    line-height: 1em !important;
+  }
+  /* .form-group {
+    margin-bottom: 5px;
+  } */
+  /* .add-burger{
+    margin-bottom: 50px;
+  } */
+  /* .label {
+    font-weight: bold;
+  } */
+/* header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-#dev{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
+    align-items: center; 
+} */

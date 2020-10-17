@@ -1,44 +1,48 @@
-<div class="row">
-  <center>
-    <!-- Left side (Burgers Available) -->
-    <div class="col-md-4">
-      <h3 class="submitFont">Burgers Available</h3>
-      <div id="burgersAvailable">
+<header>
+  <img src="../assets/img/Hamburger1.png" class="mx-auto d-block" alt="delious burger" />
+  <h1 class="text-center"><u>EAT-DA-BURGER!</u></h1>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="burger-box col-6">
+      <h2>Burgers to devour!</h2>
 
-        <!-- Dynamically Add User Burgers Here -->
+      <ul>
         {{#each burgers}}
-          {{#unless devoured}}
-          <form action="burger/eat/{{id}}" method="POST">
-            <div class="input-group">
-              <li class="form-control">{{id}}. {{burger_name}}</li>
-                <span class="input-group-btn">
-                  <button class="btn btn-success devour-button" type="submit">Devour It!</button>
-                </span>
-            </div>
-          </form>
-          {{/unless}}
+        {{#unless devoured}}
+        <li>
+          {{name}}
+          <button class="devour-btn btn btn-success btn-sm float-right" data-id="{{id}}"
+            data-devoured="{{devoured}}">DEVOUR!</button>
+        </li>
+        {{/unless}}
         {{/each}}
-
-      </div>
+      </ul>
     </div>
+    <div class="burger-box col-6">
+      <h2>Devoured Burgers!</h2>
 
-    <div class="col-md-4"></div> 
-
-    <!-- Right side (Burgers Devoured) -->
-    <div class="col-md-4">
-      <h3 class="submitFont">Burgers Devoured</h3>
-      <div id="alreadyEaten">
-
-        <!-- Dynamically Insert Devoured Burgers Here -->
+      <ul>
         {{#each burgers}}
-          {{#if this.devoured}}
-            <div class="input-group">
-              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
-            </div>
-          {{/if}}
+        {{#if devoured}}
+        <li>
+          {{name}}
+          <button class="delete-btn btn btn-danger btn-sm float-right" data-id="{{id}}">DELETE!</button>
+        </li>
+        {{/if}}
         {{/each}}
-
-      </div>
+      </ul>
     </div>
-  </center>
+  </div>
+</div>
+<div class="add-burger text-center">
+  <h2>Add a Burger</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="newBurg">Burger Name:</label>
+      <input type="text" id="newBurg" name="name">
+    </div>
+    <button type="submit">Add Burger</button>
+  </form>
 </div>
