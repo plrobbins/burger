@@ -1,6 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
   $(".devour-btn").on("click", function(event) {
+    console.log(event)
     const id = $(this).data("id");
    
     const devour = {

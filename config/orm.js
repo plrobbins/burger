@@ -40,7 +40,7 @@ const objToSql = (ob) => {
 const orm = {
   all: (tableInput, cb) => {
     let queryString = `SELECT * FROM ${tableInput};`;
-    connection.query(queryString, (err, result) => {
+    connection.query(queryString, (err, result)=> {
       if (err) {
         throw err;
       }
@@ -62,7 +62,7 @@ const orm = {
     let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
 
     console.log(queryString);
-    connection.query(queryString, function (err, result) {
+    connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
@@ -73,7 +73,7 @@ const orm = {
   delete: (table, condition, cb) => {
     let queryString = `DELETE FROM ${table} WHERE ${condition}`;
 
-    connection.query(queryString, (err, result) => {
+    connection.query(queryString, (err, result)=> {
       if (err) {
         throw err;
       }
